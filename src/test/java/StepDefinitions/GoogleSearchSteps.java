@@ -3,6 +3,7 @@ package StepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 
 public class GoogleSearchSteps {
     @Given("I navigate to Google")
@@ -19,6 +20,8 @@ public class GoogleSearchSteps {
     @Then("I see {string} results")
     public void iSeeResults(String resultText) {
         System.out.println("I must see results containing " + resultText);
+        String actualText = "Get it from selenium driver findBy";
+        Assert.assertEquals(actualText, resultText);
     }
 
     @Given("I launch web browser,")
