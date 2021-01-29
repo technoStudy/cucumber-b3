@@ -20,4 +20,9 @@ public class GoogleSearchSteps {
     public void iSeeResults(String resultText) {
         System.out.println("I must see results containing " + resultText);
     }
+
+    @Given("I launch web browser,")
+    public void iLaunchWebBrowser() {
+        System.out.println("open web browser");
+    }
 }
