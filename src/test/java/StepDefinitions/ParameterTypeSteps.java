@@ -19,4 +19,10 @@ public class ParameterTypeSteps {
     public void iGetARandomBananaSplit(String word) {
         System.out.println(word);
     }
+
+    @Then("I also get {string} and {string}")
+    public void iAlsoGetManySweetsAnd(String arg0, String arg1) {
+        System.out.println("String 1: " +arg0);
+        System.out.println("String 2: " +arg1);
+    }
 }

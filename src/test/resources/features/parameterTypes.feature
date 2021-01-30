@@ -8,3 +8,5 @@ Feature: This test will show how to use parameter types in cucumber expressions
     Then I get a random banana split
     Then I get a random apple split
     Then I get a random cucumber split
+    Then I also get 'many sweets' and "some vegetables"
+    Then I also get "some sweets" and 'much more vegetables'
