@@ -9,12 +9,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 
 import java.util.List;
 
 public class GoogleSearchSteps {
 
     private WebDriver driver;
+
+    @BeforeClass
+    public void setUp() {
+        System.out.println("Before");
+    }
 
     @Given("I navigate to Google")
     public void iNavigateToGoogle() {
