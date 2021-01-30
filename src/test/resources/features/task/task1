@@ -1,0 +1,6 @@
+create a feature file with following steps:
+
+Given my height is 1.5 meters
+Given my weight is 65 kilograms
+
+this steps should match the same step definition
