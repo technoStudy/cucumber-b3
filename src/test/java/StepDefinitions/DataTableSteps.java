@@ -11,14 +11,24 @@ public class DataTableSteps {
         System.out.println(table);
     }
 
+    @Given("I have a list")
+    public void iHaveAList(DataTable table) {
+        List<String> list = table.asList();
+        for (String item : list) {
+            System.out.print(item + " ");
+        }
+    }
+
     @Given("I have a list of lists")
     public void iHaveAListOfLists(DataTable table) {
         List<List<String>> lists = table.asLists();
         for (List<String> list : lists) {
-            for (String item:list) {
+            for (String item : list) {
                 System.out.print(item + " ");
             }
             System.out.println();
         }
     }
+
+
 }

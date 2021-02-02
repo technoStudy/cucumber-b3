@@ -6,6 +6,11 @@ Feature: Testing data table
       | 1      | 2      | 3      |
       | 4      | 5      | 6      |
 
+  Scenario: List scenario
+    Given I have a list
+      | 1      | 2      | 3      |
+      | 4      | 5      | 6      |
+
   Scenario: List of list scenario
     Given I have a list of lists
       | 1      | 2      | 3      |
