@@ -7,3 +7,7 @@ Feature: DocStrings
 
     event more...
     """
+    And a large text with parameter 7
+    """
+    some text
+    """
