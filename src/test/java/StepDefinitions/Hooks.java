@@ -21,7 +21,7 @@ public class Hooks {
         System.out.println("Before step");
     }
 
-    @AfterStep("@scenario3")
+    @AfterStep("@scenario3 or @scenario1")
     public void afterEachStep(Scenario scenario){
         System.out.println("After step");
     }
