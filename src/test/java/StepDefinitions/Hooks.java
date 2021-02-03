@@ -1,8 +1,7 @@
 package StepDefinitions;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
+import io.cucumber.core.gherkin.Step;
+import io.cucumber.java.*;
 
 public class Hooks {
 
@@ -15,5 +14,15 @@ public class Hooks {
     public void tearDown(Scenario scenario) {
         System.out.println("After scenario " + scenario.getName() + "!");
         System.out.println(scenario.getStatus());
+    }
+
+    @BeforeStep
+    public void beforeEachStep(Scenario scenario) {
+        System.out.println("Before step");
+    }
+
+    @AfterStep
+    public void afterEachStep(Scenario scenario){
+        System.out.println("After step");
     }
 }
