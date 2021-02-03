@@ -20,6 +20,7 @@ public class DataTableSteps {
         for (String item : list) {
             System.out.print(item + " ");
         }
+        System.out.println();
     }
 
     @Given("I have a list of lists")
