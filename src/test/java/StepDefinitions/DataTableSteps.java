@@ -2,6 +2,7 @@ package StepDefinitions;
 
 import Models.GenericObjectClass;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Given;
 
 import java.util.List;
@@ -50,9 +51,18 @@ public class DataTableSteps {
 
     @Given("I have a list of objects")
     public void iHaveAListOfObjects(List<GenericObjectClass> list) {
-        // TODO: fix this with data table type
         for (GenericObjectClass item : list ) {
             System.out.println(item);
         }
+    }
+
+    @DataTableType
+    public GenericObjectClass converterToGenericObjectClass(Map<String, String> entry){
+        GenericObjectClass object = new GenericObjectClass();
+        object.setField1(entry.get("field1"));
+        object.setField2(entry.get("field2"));
+        object.setField3(entry.get("field3"));
+        object.setField4(entry.get("field4"));
+        return object;
     }
 }
