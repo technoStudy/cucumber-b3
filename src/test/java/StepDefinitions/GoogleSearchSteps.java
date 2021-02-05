@@ -1,12 +1,12 @@
 package StepDefinitions;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -20,6 +20,14 @@ public class GoogleSearchSteps {
     @BeforeClass
     public void setUp() {
         System.out.println("Before");
+    }
+
+    @After()
+    public void tearDown(Scenario scenario) {
+        if(scenario.isFailed()){
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
+        }
     }
 
     @Given("I navigate to Google")
@@ -45,6 +53,7 @@ public class GoogleSearchSteps {
             boolean contains = actualText.contains(resultText);
             Assert.assertTrue(contains);
         }
+        Assert.fail();
     }
 
     @Given("I launch web browser,")
